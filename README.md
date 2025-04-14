@@ -1,4 +1,14 @@
-# User setup
+# ywait
+
+I got tired of using the yt-dlp CLI to download YouTube videos so I made this clean and simple UI.
+
+## Screenshots
+
+![](screenshots/home.png)
+
+![](screenshots/settings.png)
+
+## User setup
 
 1. Install [yt-dlp](https://github.com/yt-dlp/yt-dlp)
    - Eventually will be replaced with a download manager in the app
@@ -7,7 +17,7 @@
 
 NOTE: Only tested on MacOS
 
-# Upcoming Features
+## Upcoming Features
 
 - Better app icon (current was ai generated)
 - Option to download video and audio/just audio
@@ -19,6 +29,6 @@ NOTE: Only tested on MacOS
 - [STRETCH] Google login
 - [STRETCH] View videos as if it were Netflix or YouTube home screen
 
-## Download Options
+### Download Options
 
 - Add option to manually input video/audio format
