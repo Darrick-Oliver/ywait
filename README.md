@@ -10,10 +10,30 @@ I got tired of using the yt-dlp CLI to download YouTube videos so I made this cl
 
 ## User setup
 
+### Pre-requistes
+
 1. Install [yt-dlp](https://github.com/yt-dlp/yt-dlp)
-   - Eventually will be replaced with a download manager in the app
-1. Clone this repository and run `npx tauri build`
-   - Eventually will be replaced with Releases on GitHub
+   - (Eventually will be replaced with a download manager in the app)
+   - WINDOWS: Add yt-dlp.exe to your [PATH](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/), you can run `yt-dlp --version` in PowerShell to see if it's working
+1. Make sure to also install [ffmpeg and ffprobe](https://www.ffmpeg.org/), mentioned on the yt-dlp GitHub
+
+### Installing the application
+
+1. Check the releases page for binaries
+
+## Developer setup
+
+### Pre-requistes
+
+1. Install [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+1. Install [node](https://nodejs.org/en/download) if it isn't installed already
+1. Install [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
+
+### Bundling
+
+1. Clone this repository
+1. Run `npm install`
+1. Run `npx tauri build` or `npx tauri dev`
 
 NOTE: Only tested on MacOS
 
