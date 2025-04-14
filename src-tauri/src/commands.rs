@@ -104,6 +104,7 @@ pub fn retrieve_video_data(window: tauri::Window, url: String) {
         let mut child = Command::new("yt-dlp")
             .args([&url, "-J"])
             .stdout(Stdio::piped())
+            .stderr(Stdio::piped())
             .spawn()
             .expect("Failed to start yt-dlp");
 
@@ -116,6 +117,15 @@ pub fn retrieve_video_data(window: tauri::Window, url: String) {
                 .expect("Failed to read stdout");
 
             window.emit("yt-dlp-video-data", output).unwrap();
+        }
+
+        if let Some(stderr) = child.stderr.take() {
+            let reader = BufReader::new(stderr);
+            for line in reader.lines() {
+                if let Ok(line) = line {
+                    window.emit("yt-dlp-error", line).unwrap();
+                }
+            }
         }
     });
 }
